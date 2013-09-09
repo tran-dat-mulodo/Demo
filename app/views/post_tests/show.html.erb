@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @post_test.user %>
+</p>
+
+<p>
+  <strong>Pass:</strong>
+  <%= @post_test.pass %>
+</p>
+
+<%= link_to 'Edit', edit_post_test_path(@post_test) %> |
+<%= link_to 'Back', post_tests_path %>

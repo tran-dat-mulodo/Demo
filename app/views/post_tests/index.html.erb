@@ -1,0 +1,29 @@
+<h1>Listing post_tests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Pass</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @post_tests.each do |post_test| %>
+      <tr>
+        <td><%= post_test.user %></td>
+        <td><%= post_test.pass %></td>
+        <td><%= link_to 'Show', post_test %></td>
+        <td><%= link_to 'Edit', edit_post_test_path(post_test) %></td>
+        <td><%= link_to 'Destroy', post_test, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post test', new_post_test_path %>
