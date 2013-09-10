@@ -17,9 +17,11 @@
 #   - sleep 3 # give Web server some time to bind to sockets, etc
 
 before_install:
+  - mysql -e 'create database myapp_test;'
+  - mysql -e 'create database myapp_dev;
    # - bundle install
    #- bundle update
-   - rackup --port 9999
+  - rackup --port 9999
   - bundle exec cucumber
   - bundle exec rspec
   
@@ -28,8 +30,8 @@ notifications:
     - tran.dat@mulodo.com
   
 before_script:
-  - mysql -e 'create database myapp_test;'
-  - mysql -e 'create database myapp_dev;'
+#  - mysql -e 'create database myapp_test;'
+#  - mysql -e 'create database myapp_dev;'
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   #- sleep 3 # give xvfb some time to start
