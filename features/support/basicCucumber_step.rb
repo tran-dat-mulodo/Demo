@@ -1,6 +1,6 @@
 Given(/^I go to the new page page$/) do
   #pending # express the regexp above with the code you wish you had
-  visit "http://localhost:3000/post_tests/new"#new_page_path
+  visit "/post_tests/new"#new_page_path
 end
 
 Given(/^I fill in "(.*?)" with "(.*?)"$/) do |arg1, arg2|
