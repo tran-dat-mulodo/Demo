@@ -23,7 +23,7 @@ before_install:
   - mysql -e 'create database myapp_dev;'
    # - bundle install
    #- bundle update
-  - rackup --port 9999
+  # - rackup --port 9999
   - bundle exec cucumber
   - bundle exec rspec
   
