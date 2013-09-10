@@ -33,6 +33,8 @@ before_script:
   #- bundle exec rackup  # start a Web server
   #- sleep 3 # give Web server some time to bind to sockets, etc
   
-#script:
+script:
+  - rackup --port 9999
   - bundle exec cucumber
+  - bundle exec rspec
 
