@@ -50,8 +50,23 @@ before_script:
   # - bundle exec rspec
   # - bundle exec cucumber
   
-# script:
+script:
 #  - rackup --port 9999
 #  - bundle exec cucumber
 #  - bundle exec rspec
 
+  - rake db:migrate RAILS_ENV=test
+  - rake db:migrate RAILS_ENV=development
+  - cd ../spec
+  - bundle exec rspec controller/post_tests_controller_spec.rb
+  - bundle exec rspec views/post_tests/edit.html.erb_spec.rb
+  - bundle exec rspec views/post_tests/index.html.erb_spec.rb
+  - bundle exec rspec views/post_tests/new.html.erb_spec.rb
+  - bundle exec rspec views/post_tests/show.html.erb_spec.rb
+  - bundle exec rspec models/post_test_spec.rb
+  - bundle exec rspec models/posttest2_spec.rb
+  - bundle exec rspec routing/post_tests_routing_spec.rb
+  - bundle exec rspec request/post_tests_spec.rb
+  - bundle exec rspec mock/post_tests_spec.rb
+  - bundle exec rspec helper/application_helper_spec.rb
+  - bundle exec rspec feature/widget_management_spec.rb
