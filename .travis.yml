@@ -10,21 +10,21 @@
 #   - rbx-19mode
 
 
-before_install:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 # give xvfb some time to start
-  - mysql -e 'create database myapp_test;'
-  - mysql -e 'create database myapp_dev;'
-  # - sleep 3 # give Web server some time to bind to sockets, etc
-  - bundle install
-  
-   #- bundle update
-  # - rackup --port 9999
-  - rake db:migrate RAILS_ENV=test
-  - rake db:migrate RAILS_ENV=development
-  - bundle exec rspec
-  - bundle exec cucumber
+# before_install:
+  # - "export DISPLAY=:99.0"
+  # - "sh -e /etc/init.d/xvfb start"
+  # - sleep 3 # give xvfb some time to start
+  # - mysql -e 'create database myapp_test;'
+  # - mysql -e 'create database myapp_dev;'
+  # # - sleep 3 # give Web server some time to bind to sockets, etc
+  # - bundle install
+#   
+   # #- bundle update
+  # # - rackup --port 9999
+  # - rake db:migrate RAILS_ENV=test
+  # - rake db:migrate RAILS_ENV=development
+  # - bundle exec rspec
+  # - bundle exec cucumber
 
   
 notifications:
@@ -39,6 +39,14 @@ notifications:
   #- sleep 3 # give xvfb some time to start
   #- bundle exec rackup  # start a Web server
   #- sleep 3 # give Web server some time to bind to sockets, etc
+
+before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - mysql -e 'create database myapp_test;'
+  - mysql -e 'create database myapp_dev;'
+  - bundle exec rspec
+  - bundle exec cucumber
   
 # script:
 #  - rackup --port 9999
