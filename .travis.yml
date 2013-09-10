@@ -57,15 +57,15 @@ script:
 
   - rake db:migrate RAILS_ENV=test
   - rake db:migrate RAILS_ENV=development
-  - bundle exec rspec spec/controller/post_tests_controller_spec.rb
-  - bundle exec rspec spec/views/post_tests/edit.html.erb_spec.rb
+  - bundle exec rspec spec/controllers/post_tests_controller_spec.rb
+  # - bundle exec rspec spec/views/post_tests/edit.html.erb_spec.rb
   - bundle exec rspec spec/views/post_tests/index.html.erb_spec.rb
-  - bundle exec rspec spec/views/post_tests/new.html.erb_spec.rb
+  # - bundle exec rspec spec/views/post_tests/new.html.erb_spec.rb
   - bundle exec rspec spec/views/post_tests/show.html.erb_spec.rb
   - bundle exec rspec spec/models/post_test_spec.rb
   - bundle exec rspec spec/models/posttest2_spec.rb
   - bundle exec rspec spec/routing/post_tests_routing_spec.rb
-  - bundle exec rspec spec/request/post_tests_spec.rb
-  - bundle exec rspec spec/mock/post_tests_spec.rb
-  - bundle exec rspec spec/helper/application_helper_spec.rb
-  - bundle exec rspec spec/feature/widget_management_spec.rb
+  - bundle exec rspec spec/requests/post_tests_spec.rb
+  - bundle exec rspec spec/Mock/mock.rb
+  - bundle exec rspec spec/Helper/application_helper_spec.rb
+  - bundle exec rspec spec/Feauter/widget_management_spec.rb
