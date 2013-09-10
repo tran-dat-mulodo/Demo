@@ -21,6 +21,8 @@ before_install:
   
    #- bundle update
   # - rackup --port 9999
+  - rake db:migrate RAILS_ENV=test
+  - rake db:migrate RAILS_ENV=development
   - bundle exec rspec
   - bundle exec cucumber
 
