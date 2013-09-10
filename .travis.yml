@@ -14,7 +14,7 @@ before_install:
 
   # - sleep 3 # give Web server some time to bind to sockets, etc
   - bundle install
-    - "export DISPLAY=:99.0"
+  - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   # - sleep 3 # give xvfb some time to start
   - mysql -e 'create database myapp_test;'
@@ -53,11 +53,11 @@ notifications:
   #- bundle exec rackup  # start a Web server
   #- sleep 3 # give Web server some time to bind to sockets, etc
 
-before_script:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - mysql -e 'create database myapp_test;'
-  - mysql -e 'create database myapp_dev;'
+# before_script:
+#   - "export DISPLAY=:99.0"
+#   - "sh -e /etc/init.d/xvfb start"
+#   - mysql -e 'create database myapp_test;'
+#   - mysql -e 'create database myapp_dev;'
   # - rake db:migrate RAILS_ENV=test
   # - rake db:migrate RAILS_ENV=development
   # - bundle exec rspec
