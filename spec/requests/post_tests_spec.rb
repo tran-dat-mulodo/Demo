@@ -28,7 +28,7 @@ describe "PostTests" do
       follow_redirect!
       
       expect(response).to render_template(:show)
-      expect(response.body).to include("Welcome to the Sample App")
+      expect(response.body).to include("successfully")
     end
   end
   
