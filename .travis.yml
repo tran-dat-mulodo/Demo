@@ -68,5 +68,6 @@ script:
   - bundle exec rspec spec/requests/post_tests_spec.rb
   - bundle exec rspec spec/Mock/mock.rb
   - bundle exec rspec spec/Helper/application_helper_spec.rb
-  - rails s
+  - rackup
+  - sleep 3
   - bundle exec rspec spec/Feauter/widget_management_spec.rb
