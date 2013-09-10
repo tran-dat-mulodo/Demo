@@ -41,7 +41,7 @@ notifications:
   #- sleep 3 # give Web server some time to bind to sockets, etc
 
 before_script:
-  - "export DISPLAY=:80"
+  - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - mysql -e 'create database myapp_test;'
   - mysql -e 'create database myapp_dev;'
@@ -68,4 +68,5 @@ script:
   - bundle exec rspec spec/requests/post_tests_spec.rb
   - bundle exec rspec spec/Mock/mock.rb
   - bundle exec rspec spec/Helper/application_helper_spec.rb
+  - rackup --port 3000
   - bundle exec rspec spec/Feauter/widget_management_spec.rb
