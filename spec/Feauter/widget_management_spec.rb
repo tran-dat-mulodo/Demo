@@ -2,7 +2,7 @@ require "spec_helper"
 require 'capybara/rails'
 require 'capybara/rspec'
 
-Remember start to run sever before do this test
+#Remember start to run sever before do this test
 feature "Widget management" do
   scenario "User creates a new widget", :js => true do
 
