@@ -45,8 +45,10 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
   - mysql -e 'create database myapp_test;'
   - mysql -e 'create database myapp_dev;'
-  - bundle exec rspec
-  - bundle exec cucumber
+  # - rake db:migrate RAILS_ENV=test
+  # - rake db:migrate RAILS_ENV=development
+  # - bundle exec rspec
+  # - bundle exec cucumber
   
 # script:
 #  - rackup --port 9999
