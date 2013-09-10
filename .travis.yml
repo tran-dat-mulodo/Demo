@@ -16,8 +16,8 @@
 #   - rackup  # start a Web server
 #   - sleep 3 # give Web server some time to bind to sockets, etc
 
-before_install:
-  - bundle update
+# before_install:
+#   - bundle update
   
 notifications:
   email:
