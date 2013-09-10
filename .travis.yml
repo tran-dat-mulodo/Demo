@@ -21,8 +21,9 @@ before_install:
   
    #- bundle update
   # - rackup --port 9999
-  - bundle exec cucumber
   - bundle exec rspec
+  - bundle exec cucumber
+
   
 notifications:
   email:
