@@ -6,7 +6,7 @@ require 'capybara/rspec'
 feature "Widget management" do
   scenario "User creates a new widget", :js => true do
 
-    visit "http://localhost:3000/post_tests/new"
+    visit "http://127.0.0.1:3000/post_tests/new"
     #"/widgets/new"
 
     #choose  "feed"
