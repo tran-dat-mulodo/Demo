@@ -17,7 +17,7 @@
 #   - sleep 3 # give Web server some time to bind to sockets, etc
 
 before_install:
-   - bundle install
+   # - bundle install
    #- bundle update
    - rackup --port 9999
   - bundle exec cucumber
