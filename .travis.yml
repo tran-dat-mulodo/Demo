@@ -16,9 +16,6 @@
 #   - rackup  # start a Web server
 #   - sleep 3 # give Web server some time to bind to sockets, etc
 
-#script:
-  #-bundle update
-
 before_install:
   - bundle update
   
@@ -34,4 +31,7 @@ before_script:
   #- sleep 3 # give xvfb some time to start
   #- bundle exec rackup  # start a Web server
   #- sleep 3 # give Web server some time to bind to sockets, etc
+  
+#script:
+  - bundle exec cucumber
 
