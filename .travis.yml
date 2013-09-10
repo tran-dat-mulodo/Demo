@@ -51,9 +51,9 @@ before_script:
   # - bundle exec cucumber
   
 script:
-#  - rackup --port 9999
-#  - bundle exec cucumber
-#  - bundle exec rspec
+  #  - rackup --port 9999
+  #  - bundle exec cucumber
+  #  - bundle exec rspec
 
   - rake db:migrate RAILS_ENV=test
   - rake db:migrate RAILS_ENV=development
