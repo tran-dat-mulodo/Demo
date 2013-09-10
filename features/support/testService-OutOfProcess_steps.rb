@@ -1,6 +1,6 @@
 require 'httparty'
 When(/^the client request GET (.*)$/) do |path|
-  @last_response = HTTParty.get('http://localhost:9999' + path)
+  @last_response = HTTParty.get('http://127.0.0.1:9999' + path)
 end
 
 Then(/^the response should be JSON:$/) do |string|
