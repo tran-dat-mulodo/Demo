@@ -53,23 +53,26 @@ notifications:
   #- bundle exec rackup  # start a Web server
   #- sleep 3 # give Web server some time to bind to sockets, etc
 
-# before_script:
-#   - "export DISPLAY=:99.0"
-#   - "sh -e /etc/init.d/xvfb start"
-#   - mysql -e 'create database myapp_test;'
-#   - mysql -e 'create database myapp_dev;'
+before_script:
+  # - "export DISPLAY=:99.0"
+  # - "sh -e /etc/init.d/xvfb start"
+  # - mysql -e 'create database myapp_test;'
+  # - mysql -e 'create database myapp_dev;'
   # - rake db:migrate RAILS_ENV=test
   # - rake db:migrate RAILS_ENV=development
   # - bundle exec rspec
   # - bundle exec cucumber
+  - rake db:migrate RAILS_ENV=test
+  - rake db:migrate RAILS_ENV=development
+  - rackup
+  - sleep 3 # give Web server some time to bind to sockets, etc
   
 script:
   #  - rackup --port 9999
   #  - bundle exec cucumber
   #  - bundle exec rspec
 
-  - rake db:migrate RAILS_ENV=test
-  - rake db:migrate RAILS_ENV=development
+
   - bundle exec rspec spec/controllers/post_tests_controller_spec.rb
   # - bundle exec rspec spec/views/post_tests/edit.html.erb_spec.rb
   - bundle exec rspec spec/views/post_tests/index.html.erb_spec.rb
