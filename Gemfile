@@ -48,7 +48,7 @@ group :development, :test do
     gem 'autotest-standalone'
     gem 'capybara'
     gem "email_spec", ">= 1.4.0", :group => :test   
-    #gem 'selenium-webdriver'
+    gem 'selenium-webdriver'
    
     
     #Cucumber
